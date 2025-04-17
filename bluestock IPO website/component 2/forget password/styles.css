@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.forgot-password-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.forgot-password-heading {
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.forgot-password-description {
+    font-size: 16px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="email"]:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+.reset-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+
+.reset-button:hover {
+    background-color: #4f46e5;
+}
+
+.back-to-login {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.back-to-login a {
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.back-to-login a:hover {
+    color: #4b5563;
+    text-decoration: underline;
+}
+
+/* Success message styling */
+.success-message {
+    display: none;
+    text-align: center;
+    padding: 16px;
+    background-color: #d1fae5;
+    border-radius: 6px;
+    color: #065f46;
+    margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .logo-container {
+        margin-bottom: 24px;
+    }
+    
+    .forgot-password-heading {
+        font-size: 20px;
+    }
+    
+    .forgot-password-description {
+        font-size: 14px;
+    }
+    
+    input[type="email"] {
+        font-size: 14px;
+    }
+    
+    .reset-button {
+        padding: 10px;
+    }
+}
