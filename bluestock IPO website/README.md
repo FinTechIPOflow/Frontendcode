@@ -1,1 +1,1 @@
-This is the component 1 of IPO website.
+Please upload your work files on that specific component folders.
