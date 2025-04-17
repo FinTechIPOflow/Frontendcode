@@ -1,1 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply Now – FinTech IPO Flow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #0a0a23;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    nav a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    .ipo-details {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 700px;
+      margin: 2rem auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .ipo-details h2 {
+      margin-top: 0;
+    }
+
+    .ipo-info p {
+      margin: 0.5rem 0;
+    }
+
+    .apply-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #0077cc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .apply-btn:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      background-color: #0a0a23;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>FinTech IPO Flow</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="ipo-details.html">IPO Details</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="ipo-details">
+      <h2 id="ipo-name">Loading IPO...</h2>
+      <p class="description" id="ipo-description">Please wait...</p>
+      <div class="ipo-info">
+        <p><strong>Issue Size:</strong> <span id="ipo-issue-size">Loading...</span></p>
+        <p><strong>Price Band:</strong> <span id="ipo-price-band">Loading...</span></p>
+        <p><strong>Lot Size:</strong> <span id="ipo-lot-size">Loading...</span></p>
+        <p><strong>Open:</strong> <span id="ipo-open-date">Loading...</span></p>
+        <p><strong>Close:</strong> <span id="ipo-close-date">Loading...</span></p>
+        <p><strong>Listing:</strong> <span id="ipo-listing-date">Loading...</span></p>
+      </div>
+      <a href="#" class="apply-btn">Apply Now</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 FinTech IPO Flow</p>
+  </footer>
+
+  <script>
+    // Function to get the query parameter value from the URL
+    function getQueryParam(name) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(name);
+    }
+
+    // Function to load IPO details based on the query parameter
+    function loadIpoDetails() {
+      const ipo = getQueryParam('ipo');
+      
+      const ipoDetails = {
+        technova: {
+          name: "TechNova Solutions IPO",
+          description: "Expanding into AI-based SaaS products.",
+          issueSize: "₹800 Cr",
+          priceBand: "₹150 – ₹160",
+          lotSize: "90 shares",
+          openDate: "Apr 20, 2025",
+          closeDate: "Apr 24, 2025",
+          listingDate: "May 1, 2025"
+        },
+        greengrid: {
+          name: "GreenGrid Power IPO",
+          description: "Focused on renewable energy infrastructure.",
+          issueSize: "₹500 Cr",
+          priceBand: "₹120 – ₹130",
+          lotSize: "75 shares",
+          openDate: "Apr 22, 2025",
+          closeDate: "Apr 26, 2025",
+          listingDate: "May 2, 2025"
+        },
+        finverse: {
+          name: "FinVerse Capital IPO",
+          description: "Digital lending platform expansion.",
+          issueSize: "₹1000 Cr",
+          priceBand: "₹200 – ₹215",
+          lotSize: "60 shares",
+          openDate: "Apr 25, 2025",
+          closeDate: "Apr 29, 2025",
+          listingDate: "May 5, 2025"
+        },
+        medlink: {
+          name: "MedLink BioTech IPO",
+          description: "Biotech innovation in diagnostics.",
+          issueSize: "₹620 Cr",
+          priceBand: "₹145 – ₹155",
+          lotSize: "80 shares",
+          openDate: "Apr 28, 2025",
+          closeDate: "May 2, 2025",
+          listingDate: "May 8, 2025"
+        },
+        quickkart: {
+          name: "QuickKart IPO",
+          description: "E-commerce and retail platform growth.",
+          issueSize: "₹720 Cr",
+          priceBand: "₹180 – ₹190",
+          lotSize: "100 shares",
+          openDate: "Apr 26, 2025",
+          closeDate: "Apr 30, 2025",
+          listingDate: "May 6, 2025"
+        }
+        // Add similar objects for the remaining IPOs...
+      };
+
+      const ipoData = ipoDetails[ipo];
+
+      if (ipoData) {
+        document.getElementById('ipo-name').innerText = ipoData.name;
+        document.getElementById('ipo-description').innerText = ipoData.description;
+        document.getElementById('ipo-issue-size').innerText = ipoData.issueSize;
+        document.getElementById('ipo-price-band').innerText = ipoData.priceBand;
+        document.getElementById('ipo-lot-size').innerText = ipoData.lotSize;
+        document.getElementById('ipo-open-date').innerText = ipoData.openDate;
+        document.getElementById('ipo-close-date').innerText = ipoData.closeDate;
+        document.getElementById('ipo-listing-date').innerText = ipoData.listingDate;
+      } else {
+        document.getElementById('ipo-name').innerText = "IPO not found";
+        document.getElementById('ipo-description').innerText = "Sorry, we couldn't find details for this IPO.";
+      }
+    }
+
+    // Load IPO details on page load
+    window.onload = loadIpoDetails;
+  </script>
+</body>
+</html>
 
