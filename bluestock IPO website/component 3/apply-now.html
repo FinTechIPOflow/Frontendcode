@@ -188,6 +188,19 @@
 
     // Load IPO details on page load
     window.onload = loadIpoDetails;
+    // Load IPO details on page load
+window.onload = loadIpoDetails;
+
+// Redirect to ipo-form.html with query param when "Apply Now" is clicked
+document.getElementById("apply-now-btn").addEventListener("click", function () {
+  const ipo = getQueryParam("ipo"); // get ipo name from URL
+  if (ipo) {
+    window.location.href = `ipo-form.html?ipo=${ipo}`;
+  } else {
+    alert("IPO data not found.");
+  }
+});
+
   </script>
 </body>
 </html>
