@@ -104,103 +104,62 @@
     <p>© 2025 FinTech IPO Flow</p>
   </footer>
 
-  <script>
-    // Function to get the query parameter value from the URL
-    function getQueryParam(name) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(name);
-    }
-
-    // Function to load IPO details based on the query parameter
-    function loadIpoDetails() {
-      const ipo = getQueryParam('ipo');
-      
-      const ipoDetails = {
-        technova: {
-          name: "TechNova Solutions IPO",
-          description: "Expanding into AI-based SaaS products.",
-          issueSize: "₹800 Cr",
-          priceBand: "₹150 – ₹160",
-          lotSize: "90 shares",
-          openDate: "Apr 20, 2025",
-          closeDate: "Apr 24, 2025",
-          listingDate: "May 1, 2025"
-        },
-        greengrid: {
-          name: "GreenGrid Power IPO",
-          description: "Focused on renewable energy infrastructure.",
-          issueSize: "₹500 Cr",
-          priceBand: "₹120 – ₹130",
-          lotSize: "75 shares",
-          openDate: "Apr 22, 2025",
-          closeDate: "Apr 26, 2025",
-          listingDate: "May 2, 2025"
-        },
-        finverse: {
-          name: "FinVerse Capital IPO",
-          description: "Digital lending platform expansion.",
-          issueSize: "₹1000 Cr",
-          priceBand: "₹200 – ₹215",
-          lotSize: "60 shares",
-          openDate: "Apr 25, 2025",
-          closeDate: "Apr 29, 2025",
-          listingDate: "May 5, 2025"
-        },
-        medlink: {
-          name: "MedLink BioTech IPO",
-          description: "Biotech innovation in diagnostics.",
-          issueSize: "₹620 Cr",
-          priceBand: "₹145 – ₹155",
-          lotSize: "80 shares",
-          openDate: "Apr 28, 2025",
-          closeDate: "May 2, 2025",
-          listingDate: "May 8, 2025"
-        },
-        quickkart: {
-          name: "QuickKart IPO",
-          description: "E-commerce and retail platform growth.",
-          issueSize: "₹720 Cr",
-          priceBand: "₹180 – ₹190",
-          lotSize: "100 shares",
-          openDate: "Apr 26, 2025",
-          closeDate: "Apr 30, 2025",
-          listingDate: "May 6, 2025"
-        }
-        // Add similar objects for the remaining IPOs...
-      };
-
-      const ipoData = ipoDetails[ipo];
-
-      if (ipoData) {
-        document.getElementById('ipo-name').innerText = ipoData.name;
-        document.getElementById('ipo-description').innerText = ipoData.description;
-        document.getElementById('ipo-issue-size').innerText = ipoData.issueSize;
-        document.getElementById('ipo-price-band').innerText = ipoData.priceBand;
-        document.getElementById('ipo-lot-size').innerText = ipoData.lotSize;
-        document.getElementById('ipo-open-date').innerText = ipoData.openDate;
-        document.getElementById('ipo-close-date').innerText = ipoData.closeDate;
-        document.getElementById('ipo-listing-date').innerText = ipoData.listingDate;
-      } else {
-        document.getElementById('ipo-name').innerText = "IPO not found";
-        document.getElementById('ipo-description').innerText = "Sorry, we couldn't find details for this IPO.";
-      }
-    }
-
-    // Load IPO details on page load
-    window.onload = loadIpoDetails;
-    // Load IPO details on page load
-window.onload = loadIpoDetails;
-
-// Redirect to ipo-form.html with query param when "Apply Now" is clicked
-document.getElementById("apply-now-btn").addEventListener("click", function () {
-  const ipo = getQueryParam("ipo"); // get ipo name from URL
-  if (ipo) {
-    window.location.href = `ipo-form.html?ipo=${ipo}`;
-  } else {
-    alert("IPO data not found.");
+<script>
+  // Function to get the query parameter value from the URL
+  function getQueryParam(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
   }
-});
 
-  </script>
+  // Function to load IPO details based on the query parameter
+  function loadIpoDetails() {
+    const ipo = getQueryParam('ipo');
+
+    const ipoDetails = {
+      technova: {
+        name: "TechNova Solutions IPO",
+        description: "Expanding into AI-based SaaS products.",
+        issueSize: "₹800 Cr",
+        priceBand: "₹150 – ₹160",
+        lotSize: "90 shares",
+        openDate: "Apr 20, 2025",
+        closeDate: "Apr 24, 2025",
+        listingDate: "May 1, 2025"
+      },
+      // ... other IPOs
+    };
+
+    const ipoData = ipoDetails[ipo];
+
+    if (ipoData) {
+      document.getElementById('ipo-name').innerText = ipoData.name;
+      document.getElementById('ipo-description').innerText = ipoData.description;
+      document.getElementById('ipo-issue-size').innerText = ipoData.issueSize;
+      document.getElementById('ipo-price-band').innerText = ipoData.priceBand;
+      document.getElementById('ipo-lot-size').innerText = ipoData.lotSize;
+      document.getElementById('ipo-open-date').innerText = ipoData.openDate;
+      document.getElementById('ipo-close-date').innerText = ipoData.closeDate;
+      document.getElementById('ipo-listing-date').innerText = ipoData.listingDate;
+    } else {
+      document.getElementById('ipo-name').innerText = "IPO not found";
+      document.getElementById('ipo-description').innerText = "Sorry, we couldn't find details for this IPO.";
+    }
+  }
+
+  // Ensure all DOM content is loaded before accessing elements
+  window.onload = function () {
+    loadIpoDetails();
+
+    document.getElementById("apply-now-btn").addEventListener("click", function () {
+      const ipo = getQueryParam("ipo"); // get ipo name from current URL
+      if (ipo) {
+        window.location.href = `ipo-form.html?ipo=${ipo}`;
+      } else {
+        alert("IPO data not found.");
+      }
+    });
+  };
+</script>
+
 </body>
 </html>
