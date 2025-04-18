@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Apply for IPO – FinTech IPO Flow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #0a0a23;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .ipo-summary {
+      background-color: white;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    form {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .submit-btn {
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Apply for IPO</h1>
+  </header>
+
+  <main>
+    <div class="ipo-summary">
+      <h2 id="ipo-name">Loading IPO...</h2>
+      <p id="ipo-description"></p>
+      <p><strong>Price Band:</strong> <span id="ipo-price-band"></span></p>
+      <p><strong>Lot Size:</strong> <span id="ipo-lot-size"></span></p>
+    </div>
+
+    <form id="ipo-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required />
+
+      <label for="pan">PAN Number</label>
+      <input type="text" id="pan" required maxlength="10"/>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" required />
+
+      <label for="upi">UPI ID</label>
+      <input type="text" id="upi" required />
+
+      <label for="lots">Number of Lots</label>
+      <input type="number" id="lots" min="1" value="1" required />
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+  </main>
+
+  <script>
+    const ipoDetails = {
+      technova: {
+        name: "TechNova Solutions IPO",
+        description: "Expanding into AI-based SaaS products.",
+        priceBand: "₹150 – ₹160",
+        lotSize: "90 shares"
+      },
+      greengrid: {
+        name: "GreenGrid Power IPO",
+        description: "Focused on renewable energy infrastructure.",
+        priceBand: "₹120 – ₹130",
+        lotSize: "75 shares"
+      },
+      finverse: {
+        name: "FinVerse Capital IPO",
+        description: "Digital lending platform expansion.",
+        priceBand: "₹200 – ₹215",
+        lotSize: "60 shares"
+      },
+      medlink: {
+        name: "MedLink BioTech IPO",
+        description: "Biotech innovation in diagnostics.",
+        priceBand: "₹145 – ₹155",
+        lotSize: "80 shares"
+      },
+      quickkart: {
+        name: "QuickKart IPO",
+        description: "E-commerce and retail platform growth.",
+        priceBand: "₹180 – ₹190",
+        lotSize: "100 shares"
+      }
+    };
+
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
+
+    function loadIpoData() {
+      const ipoKey = getQueryParam('ipo');
+      const data = ipoDetails[ipoKey];
+
+      if (data) {
+        document.getElementById('ipo-name').textContent = data.name;
+        document.getElementById('ipo-description').textContent = data.description;
+        document.getElementById('ipo-price-band').textContent = data.priceBand;
+        document.getElementById('ipo-lot-size').textContent = data.lotSize;
+      } else {
+        document.getElementById('ipo-name').textContent = "IPO not found";
+        document.getElementById('ipo-description').textContent = "";
+      }
+    }
+
+    document.getElementById('ipo-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      alert("Your application has been submitted successfully!");
+      window.location.href = "thank-you.html";
+    });
+
+    window.onload = loadIpoData;
+  </script>
+</body>
+</html>
