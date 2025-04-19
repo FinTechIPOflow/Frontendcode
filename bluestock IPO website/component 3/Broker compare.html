@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bluestock Comparison</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Added Chart.js CDN -->
+</head>
+<body>
+  <div class="sidebar">
+    <ul>
+      <li>📊 Active Clients</li>
+      <li>🗓 Charges</li>
+      <li>🛠️ Complaints</li>
+      <li>🪱 Share Holding</li>
+      <li>📉 Pros & Cons</li>
+      <li>📈 Ratings</li>
+      <li>📁 Financials</li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <header>
+      <h1>BLUESTOCK</h1>
+      <nav>
+        <ul>
+          <li>Products</li>
+          <li>Community</li>
+          <li>Media</li>
+          <li>Brokers</li>
+          <li>Live News</li>
+          <li><button class="btn">Sign Up Now</button></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="comparison">
+      <div class="card">
+        <img src="https://play-lh.googleusercontent.com/Nv0Ed_YvTu1P-luZcI4d2zNZQefI3M6gQ5ynhKNUvZ0XxKgS_vAybvIl_jSYyDp4jA" alt="Angel One" height="60" />
+        <h2>Angel One</h2>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="rating">4.7</div>
+        <button class="btn">Open Demat Account</button>
+      </div>
+      <div class="card">
+        <img src="https://zerodha.com/static/images/logo.svg" alt="Zerodha" height="60" />
+        <h2>Zerodha</h2>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+        <div class="rating">4.6</div>
+        <button class="btn">Open Demat Account</button>
+      </div>
+    </div>
+    <div class="section graph">
+      <h2>Active Clients</h2>
+      <canvas id="clientsChart" width="400" height="300"></canvas> <!-- Added width and height -->
+    </div>
+    <div class="section">
+      <h2>Account Opening and Maintenance Charges</h2>
+      <table>
+        <tr>
+          <th>Charges</th>
+          <th>Angel One</th>
+          <th>Zerodha</th>
+        </tr>
+        <tr>
+          <td>Account Opening Charges</td>
+          <td>0</td>
+          <td>200</td>
+        </tr>
+        <tr>
+          <td>Account Maintenance Charges</td>
+          <td>₹80 for the first year then ₹23.6/Month</td>
+          <td>₹300 per year</td>
+        </tr>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Brokerage Charges</h2>
+      <div class="charges-grid">
+        <div class="charges-row">
+          <div class="charges-box" style="background: linear-gradient(to bottom right, #a2f9cc, #57e2e5);">23.6</div>
+          <div class="charges-label">Auto Square Off</div>
+          <div class="charges-box" style="background: linear-gradient(to bottom right, #b3d4ff, #66a3ff);">59</div>
+        </div>
+        <div class="charges-row">
+          <div class="charges-box" style="background: linear-gradient(to bottom right, #a2f9cc, #57e2e5);">20</div>
+          <div class="charges-label">Call & Trade</div>
+          <div class="charges-box" style="background: linear-gradient(to bottom right, #b3d4ff, #66a3ff);">50</div>
+        </div>
+        <div class="charges-row">
+          <div class="charges-box" style="background: linear-gradient(to bottom right, #a2f9cc, #57e2e5);">15.34</div>
+          <div class="charges-label">DP Charges</div>
+          <div class="charges-box" style="background: linear-gradient(to bottom right, #b3d4ff, #66a3ff);">15.93</div>
+        </div>
+      </div>
+    </div>
+    <div class="section extra-graph">
+      <h2>Complaints</h2>
+      <canvas id="complaintsChart" width="400" height="300"></canvas> <!-- Added width and height -->
+    </div>
+    <div class="section">
+      <h2>Pros and Cons</h2>
+      <table>
+        <tr>
+          <th>Pros</th>
+          <th>Cons</th>
+        </tr>
+        <tr>
+          <td>Low brokerage</td>
+          <td>Higher call & trade charges</td>
+        </tr>
+        <tr>
+          <td>User-friendly platform</td>
+          <td>Maintenance charges after first year</td>
+        </tr>
+        <tr>
+          <td>Best for beginners</td>
+          <td>Limited customer support</td>
+        </tr>
+        <tr>
+          <td>Multiple investment options</td>
+          <td>Limited advanced features</td>
+        </tr>
+        <tr>
+          <td>Good mobile application</td>
+          <td>Occasional app crashes</td>
+        </tr>
+      </table>
+    </div>
+    <div class="section">
+      <h2>Ratings</h2>
+      <table class="ratings-table">
+        <tr>
+          <th>Platform</th>
+          <th>Rating</th>
+          <th>Review</th>
+        </tr>
+        <tr>
+          <td>Angel One</td>
+          <td>⭐⭐⭐⭐⭐ 4.7</td>
+          <td>Excellent platform for beginners with low brokerage fees.</td>
+        </tr>
+        <tr>
+          <td>Zerodha</td>
+          <td>⭐⭐⭐⭐⭐ 4.6</td>
+          <td>Great platform with advanced features and high reliability.</td>
+        </tr>
+      </table>
+    </div>
+    <div class="section extra-graph">
+      <h2>Financials</h2>
+      <canvas id="financialsChart" width="400" height="300"></canvas> <!-- Added width and height -->
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
