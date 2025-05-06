@@ -1,0 +1,146 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #1a1a1a;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #1d1dff;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #333;
+}
+
+.auth-links {
+  display: flex;
+  align-items: center;
+}
+
+.auth-links a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.signup-btn {
+  background: #3e4eff;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.breadcrumb {
+  padding: 20px 40px;
+  color: #888;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  background: #3e4eff;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero-image img {
+  width: 400px;
+}
+
+.club-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  gap: 40px;
+}
+
+.club-text h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.club-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.club-text li {
+  margin-bottom: 10px;
+}
+
+.club-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.club-tags span {
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.expert-interaction {
+  padding: 40px;
+}
+
+.expert-interaction h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.interaction-box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.interaction-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.interaction-text li {
+  margin-bottom: 10px;
+}
+
+.interaction-image img {
+  width: 300px;
+}
